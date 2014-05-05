@@ -1,0 +1,208 @@
+// DOCUMENTATION
+
+/*-----------------------------------------------------------------------------------
+
+Define bottom & top zone height for different screen sizes :
+@top-zone-height
+@top-zone-height-lg
+@top-zone-height-md
+@top-zone-height-sm
+
+@bottom-zone-height   
+@bottom-zone-height-lg
+@bottom-zone-height-md
+@bottom-zone-height-sm
+
+note : lg, md & sm breakpoints are defined in style.less
+
+-------------------------------------------------------------------------------------
+
+Define left & right zone width
+@left-zone-width 
+@right-zone-width
+
+-------------------------------------------------------------------------------------
+
+-add class 'list-parent' to the .[left|right]-zone containing the list
+ (add id #list to the list)
+
+-add class 'map-parent' to the zone containing the map (.middle-zone)
+ (add id #map to the map)
+
+-------------------------------------------------------------------------------------
+
+Exemple use of .pushed-*-zone :
+
+If you DONT want the middle-zone (the map) to be overlapped by the right-zone add
+class .pushed-right-zone to the .middle-zone.
+
+Works for :
+.pushed-middle-zone
+.pushed-top-zone
+.pushed-bottom-zone
+.pushed-right-zone
+.pushed-left-zone
+
+and can be used on every .*-zone
+
+-------------------------------------------------------------------------------------
+
+Responsive :
+When screen width <= screen-md
+.list-parent & .map-parent are automaticaly set to width : 100%, the list-parent on
+top of the map-parent.
+
+-----------------------------------------------------------------------------------*/
+
+// = VARS
+
+@top-zone-height    : 70px;
+@top-zone-height-lg : 30px;
+@top-zone-height-md : 30px;
+@top-zone-height-sm : 30px;
+
+@bottom-zone-height    : 30px;
+@bottom-zone-height-lg : 0px;
+@bottom-zone-height-md : 0px;
+@bottom-zone-height-sm : 0px;
+
+@left-zone-width : 300px;
+@right-zone-width : 250px;
+
+// = SKELETON
+
+.top-zone{
+    .box-sizing();
+    background: #EAFFF7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: @top-zone-height;
+    z-index: 3;
+    overflow: hidden;
+}
+.left-zone{
+    .box-sizing();
+    background: #FAEDFC;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: @left-zone-width;
+    z-index: 2;
+}
+.right-zone{
+    .box-sizing();
+    background: #F5FBE3;
+    position: fixed; 
+    right: 0;
+    top: 0;
+    bottom: 0; 
+    height: 100%;
+    width: @right-zone-width;
+    z-index: 2;
+}
+.middle-zone{
+    .box-sizing();
+    background: #FBF2EC;
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.bottom-zone{
+    .box-sizing();
+    background: #EDFAF5;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: @bottom-zone-height;
+    z-index: 3;
+    overflow: hidden;
+}
+
+// = BEHAVIOUR CLASSES
+
+.pushed-left-zone{
+    padding-left: @left-zone-width;
+}
+.pushed-right-zone{
+    padding-right: @right-zone-width;
+}
+.pushed-top-zone{
+    padding-top: @top-zone-height;
+}
+.pushed-bottom-zone{
+    padding-bottom: @bottom-zone-height;
+}
+
+// = ELEMENTS
+
+#map{
+    width: 100%;
+    height: 100%;
+}
+
+#list{
+    height: 100%;
+    overflow: auto;
+}
+
+// = MEDIAQUERIES
+
+@media (max-width: @screen-lg) {
+    .top-zone{
+        height: @top-zone-height-lg;
+    }
+    .bottom-zone{
+        height: @bottom-zone-height-lg;
+    }
+    .pushed-top-zone{
+        padding-top: @top-zone-height-lg;
+    }
+    .pushed-bottom-zone{
+        padding-bottom: @bottom-zone-height-lg;
+    }
+}
+
+@media (max-width: @screen-md) {
+
+    .top-zone{
+        height: @top-zone-height-md;
+    }
+    .bottom-zone{
+        height: @bottom-zone-height-md;
+    }
+    .pushed-top-zone{
+        padding-top: @top-zone-height-md;
+    }
+    .pushed-bottom-zone{
+        padding-bottom: @bottom-zone-height-md;
+    }
+
+    .list-parent{
+        width: 100%;
+    }
+    .map-parent{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: @screen-sm) {
+    .top-zone{
+        height: @top-zone-height-sm;
+    }
+    .bottom-zone{
+        height: @bottom-zone-height-sm;
+    }
+    .pushed-top-zone{
+        padding-top: @top-zone-height-sm;
+    }
+    .pushed-bottom-zone{
+        padding-bottom: @bottom-zone-height-sm;
+    }
+    
+}
