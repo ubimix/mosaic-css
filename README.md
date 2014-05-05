@@ -9,7 +9,7 @@ DOCUMENTATION
   
 Define bottom & top zone height for different screen sizes :  
 `@top-zone-height`  
-`@top-zone-height-lg` 
+`@top-zone-height-lg`  
 `@top-zone-height-md`  
 `@top-zone-height-sm`  
    
@@ -28,11 +28,11 @@ Define left & right zone width
 
 ------
 
--add class 'list-parent' to the .[left|right]-zone containing the list  
- (add id #list to the list)  
+-add class `list-parent` to the `.[left|right]-zone` containing the list  
+ (add id `#list` to the list)  
   
--add class 'map-parent' to the zone containing the map (.middle-zone)  
- (add id #map to the map)  
+-add class `map-parent` to the zone containing the map (`.middle-zone`)  
+ (add id `#map` to the map)  
 
 ------
 
