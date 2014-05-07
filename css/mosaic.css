@@ -1,0 +1,135 @@
+.top-zone {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #EAFFF7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 3;
+  overflow: hidden;
+}
+.left-zone {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #FAEDFC;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  z-index: 2;
+}
+.right-zone {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #F5FBE3;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 250px;
+  z-index: 2;
+}
+.middle-zone {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #FBF2EC;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.bottom-zone {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #EDFAF5;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  z-index: 3;
+  overflow: hidden;
+}
+.pushed-left-zone {
+  padding-left: 300px;
+}
+.pushed-right-zone {
+  padding-right: 250px;
+}
+.pushed-top-zone {
+  padding-top: 70px;
+}
+.pushed-bottom-zone {
+  padding-bottom: 30px;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+#list {
+  height: 100%;
+  overflow: auto;
+}
+@media (max-width: ) {
+  .top-zone {
+    height: 30px;
+  }
+  .bottom-zone {
+    height: 0px;
+  }
+  .pushed-top-zone {
+    padding-top: 30px;
+  }
+  .pushed-bottom-zone {
+    padding-bottom: 0px;
+  }
+}
+@media (max-width: ) {
+  .top-zone {
+    height: 30px;
+  }
+  .bottom-zone {
+    height: 0px;
+  }
+  .pushed-top-zone {
+    padding-top: 30px;
+  }
+  .pushed-bottom-zone {
+    padding-bottom: 0px;
+  }
+  .list-parent {
+    width: 100%;
+  }
+  .map-parent {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: ) {
+  .top-zone {
+    height: 30px;
+  }
+  .bottom-zone {
+    height: 0px;
+  }
+  .pushed-top-zone {
+    padding-top: 30px;
+  }
+  .pushed-bottom-zone {
+    padding-bottom: 0px;
+  }
+}

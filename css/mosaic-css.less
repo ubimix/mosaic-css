@@ -69,6 +69,15 @@ top of the map-parent.
 @left-zone-width : 300px;
 @right-zone-width : 250px;
 
+// = MIXINS 
+
+.box-sizing(@sizing: border-box) {
+    -ms-box-sizing: @sizing;
+    -moz-box-sizing: @sizing;
+    -webkit-box-sizing: @sizing;
+    box-sizing: @sizing;
+}
+
 // = SKELETON
 
 .top-zone{
